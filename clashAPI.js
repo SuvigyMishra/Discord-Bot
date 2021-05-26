@@ -20,9 +20,9 @@ function byClanTag(tag, callback) {
             reply = reply + member.name + " -- " + member.tag + " -- " + "Not linked\n";
           } else {
             if (player.strikeCount === 0) {
-              reply = reply + member.name + " -- No Strikes.\n";
+              reply = reply + member.name + " -- " + member.tag + " -- No Strikes.\n";
             } else {
-              reply = reply + member.name + " -- " + player.strikeCount + " Strikes.\n";
+              reply = reply + member.name + " -- " + member.tag + " -- " + player.strikeCount + " Strikes.\n";
             }
           }
         });
