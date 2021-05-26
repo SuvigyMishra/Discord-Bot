@@ -1,9 +1,8 @@
 import clashApi from "clash-of-clans-api";
-import config from "./config.js";
 import Player from "./mongoose.js";
 
 let clashApiClient = clashApi({
-  token: config.clashApiToken,
+  token: process.env.clashApiToken,
 });
 
 function byClanTag(tag, callback) {

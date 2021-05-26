@@ -1,6 +1,5 @@
 import { Client } from "discord.js";
 import { byClanTag } from "./clashAPI.js";
-import config from "./config.js";
 import messageDecorder from "./messageDecoder.js";
 import Player from "./mongoose.js";
 import strikeCalc from "./strikeCalc.js";
@@ -13,7 +12,7 @@ client.once("ready", () => {
 
 client.on("message", (message) => {
   message.content = message.content.toUpperCase();
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  if (!message.content.startsWith(process.env.prefix) || message.author.bot) return;
 
   if (!message.member.roles.cache.some((role) => role.name === "⚡️Leadership⚡️")) {
     message.channel.send("You do not have the permission to use this command!");
@@ -176,4 +175,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login(config.clientKey);
+client.login(process.env.clientKey);
