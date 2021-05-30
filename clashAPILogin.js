@@ -1,4 +1,5 @@
 import axios from "axios";
+import config from "./config.js";
 
 const { data: IP } = await axios.get("https://api.ipify.org/");
 
@@ -41,7 +42,7 @@ async function getToken() {
     cidrRanges: [IP],
   });
 
-  return key;
+  return key.key.key;
 }
 
-export default getToken();
+export default getToken;
